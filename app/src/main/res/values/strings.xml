@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GithubStars</string>
+
+    <string name="RepoDesc">Repos description</string>
+    <string name="Owner">Owner</string>
+    <string name="StarsNumber">0000</string>
+    <string name="repoName">Repo Name</string>
+
 </resources>

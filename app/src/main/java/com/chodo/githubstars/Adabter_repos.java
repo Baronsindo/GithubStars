@@ -22,6 +22,20 @@ public class Adabter_repos extends RecyclerView.Adapter<Adabter_repos.reposViewH
 
     List<Class_Repos> reposList;
     Context context;
+    OnBottomReachedListener onBottomReachedListener;
+
+    //
+    public interface OnBottomReachedListener {
+
+        void onBottomReached(int position);
+
+    }
+
+    // Listener triggers when reaching bottom
+    public void setOnBottomReachedListener(OnBottomReachedListener onBottomReachedListener){
+
+        this.onBottomReachedListener = onBottomReachedListener;
+    }
 
     public static class reposViewHolder extends RecyclerView.ViewHolder {
 
@@ -33,8 +47,6 @@ public class Adabter_repos extends RecyclerView.Adapter<Adabter_repos.reposViewH
         ImageView Star;
         ImageView IvOwner;
 
-
-        // hada constrcutor dyal had lclass Kiyakhed Layout dyal l card
         reposViewHolder(View itemView) {
             super(itemView);
             cardview = (CardView) itemView.findViewById(R.id.cardview);
@@ -49,6 +61,7 @@ public class Adabter_repos extends RecyclerView.Adapter<Adabter_repos.reposViewH
     }
 
 
+    // Constructor
     Adabter_repos(List<Class_Repos> reposList) {
         this.reposList = reposList;
     }
@@ -63,7 +76,6 @@ public class Adabter_repos extends RecyclerView.Adapter<Adabter_repos.reposViewH
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_repos, viewGroup, false);
         reposViewHolder pvh = new reposViewHolder(v);
         context = viewGroup.getContext();
-        // you can initilise database here;
         return pvh;
     }
 
@@ -81,9 +93,13 @@ public class Adabter_repos extends RecyclerView.Adapter<Adabter_repos.reposViewH
         reposViewHolder.cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //implement When click on the list 
+                //Ready For Clicking
             }
         });
+
+        if (index == reposList.size() - 1){
+            onBottomReachedListener.onBottomReached(index);
+        }
     }
 
     @Override

@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5sp"
                 android:layout_marginBottom="10sp"
-                android:text="Repo Name"
+                android:text="@string/repoName"
                 android:textColor="@color/Titels"
                 android:textSize="30sp" />
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5sp"
                 android:layout_marginBottom="10sp"
-                android:text="TextView"
+                android:text="@string/RepoDesc"
                 android:textColor="@color/Titels"
                 android:textSize="15sp" />
 
@@ -60,7 +60,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="TextView"
+                    android:text="@string/Owner"
                     android:textColor="@color/Titels" />
 
                 <TextView
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="TextView"
+                    android:text="@string/StarsNumber"
                     android:textColor="@color/Titels"
                     app:layout_constraintLeft_toLeftOf="@id/Star" />
 
